@@ -35,6 +35,10 @@ public class Deck {
         return result; 
     }
 
+    public int length() { 
+        return this.shuffledDeck.length; 
+    }
+
     public static void main(String[] args) { 
         Deck deck = new Deck(); 
         System.out.println(deck); 
