@@ -47,6 +47,33 @@ public class GamePlay {
         return result; 
     }
 
+    public void deal(Player[] players) { 
+        for(Player player : players) { 
+
+            int card = deck.getDeck()[0];
+            if(numOfPlayers == 1) { 
+                for(int g=0; g<8; g++) { 
+                    player.addCard(g, card);
+                }
+            } else if(numOfPlayers == 2) { 
+                for(int k=0; k<7; k++) { 
+                    player.addCard(k, card);
+                }
+            } else { 
+                for(int u=6; u<6; u++) { 
+                    player.addCard(u, card);
+                }
+            }
+
+            // makes a copy of the deck and sets this as the new deck with the card removed
+            int[] newDeck = new int[deck.length()-1]; 
+            for(int i=0; i<newDeck.length; i++) { 
+                newDeck[i] = deck.getDeck()[i+1]; 
+            }
+            deck = new Deck(newDeck); 
+        }
+    }
+
     public static void main(String[] args) { 
         GamePlay newGame = new GamePlay(); 
         System.out.println(newGame);

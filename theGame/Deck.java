@@ -14,6 +14,10 @@ public class Deck {
         this.shuffledDeck = shuffle(this.unshuffledDeck); 
     }
 
+    public Deck(int[] deck) { 
+        this.shuffledDeck = deck; 
+    }
+
     private int[] shuffle(int[] unshuffledDeck) { 
         Random rand = new Random(); 
         for(int n=0; n<99; n++) { 
@@ -24,6 +28,14 @@ public class Deck {
         }
         this.shuffledDeck = unshuffledDeck; 
         return this.shuffledDeck; 
+    }
+
+    public int[] getDeck() { 
+        return this.shuffledDeck; 
+    }
+
+    public void setDeck(int[] deck) { 
+        this.shuffledDeck = deck; 
     }
 
     @Override 
