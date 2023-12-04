@@ -3,12 +3,12 @@ package theGame;
 import java.util.Random;
 
 public class Deck { 
-    private final int cardCount = 99; 
-    private final int[] unshuffledDeck = new int[99]; 
+    private final int cardCount = 97; 
+    private final int[] unshuffledDeck = new int[97]; 
     private int[] shuffledDeck; 
 
     public Deck() { 
-        for(int i=1; i<cardCount; i++) { 
+        for(int i=0; i<cardCount; i++) { 
             unshuffledDeck[i] = i; 
         }
         this.shuffledDeck = shuffle(this.unshuffledDeck); 
@@ -20,7 +20,7 @@ public class Deck {
 
     private int[] shuffle(int[] unshuffledDeck) { 
         Random rand = new Random(); 
-        for(int n=0; n<99; n++) { 
+        for(int n=0; n<97; n++) { 
             int indexToSwap = rand.nextInt(unshuffledDeck.length); 
             int temp = unshuffledDeck[indexToSwap]; 
             unshuffledDeck[indexToSwap] = unshuffledDeck[n]; 
